@@ -13,12 +13,17 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val fragmenManager = supportFragmentManager
+        val fragmentManager  = supportFragmentManager
         val homeFragment = HomeFragment()
-        val fragment = fragmenManager.findFragmentByTag(HomeFragment::class.java.simpleName)
+        val fragment = fragmentManager.findFragmentByTag(HomeFragment::class.java.simpleName)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.frame_container)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
-        if (fragment !is HomeFragment){
-            Log.d("My Flexible Fragment", "Fragment Name : " + HomeFragment::class.java.simpleName)
+        if (fragment !is HomeFragment) {
+            Log.d("MyFlexible Fragment", "Fragment Name :" + HomeFragment::class.java.simpleName)
             fragmentManager
                 .beginTransaction()
                 .add(R.id.frame_container, homeFragment, HomeFragment::class.java.simpleName)

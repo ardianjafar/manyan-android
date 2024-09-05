@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MyFlexibleActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="this_profile">Ini activity Profile</string>
     <string name="this_category">Ini fragment Category</string>
@@ -18,4 +19,5 @@
     <string name="david_moyes">David Moyes</string>
     <string name="choose">Pilih</string>
     <string name="close">Tutup</string>
+
 </resources>
