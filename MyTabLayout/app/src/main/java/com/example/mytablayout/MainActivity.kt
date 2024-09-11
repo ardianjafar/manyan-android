@@ -24,6 +24,14 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+
+
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+//            insets
+//        }
+
         val sectionsPagerAdapter = SectionsPagerAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
@@ -32,12 +40,6 @@ class MainActivity : AppCompatActivity() {
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
         supportActionBar?.elevation = 0f
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
     }
 
 }
